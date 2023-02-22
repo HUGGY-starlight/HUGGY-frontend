@@ -1,7 +1,14 @@
 import UrlText from "./common/UrlText";
 import NonScrollContainer from "./common/NonScrollContainer";
 import AutoSizedImage from "./common/AutoSizedImage";
-import { Title, TitleBd, Subtitle } from "./common/TextComponent";
+import {
+  Title,
+  TitleBd,
+  Subtitle,
+  TitleBox,
+  Heavy,
+} from "./common/TextComponent";
+import CustomButton from "./buttons/CustomButton";
 
 export {
   UrlText,
@@ -10,4 +17,7 @@ export {
   Title,
   TitleBd,
   Subtitle,
+  TitleBox,
+  Heavy,
+  CustomButton,
 };

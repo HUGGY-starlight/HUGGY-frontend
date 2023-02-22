@@ -1,5 +1,17 @@
 import styled from "styled-components/native";
 
+export const Heavy = styled.Text`
+  font-size: 32px;
+  font-weight: 900;
+`;
+
+export const TitleBox = styled.View`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
 export const Title = styled.Text<{ color: string; margin?: string }>`
   font-size: 20px;
   font-weight: 600;
