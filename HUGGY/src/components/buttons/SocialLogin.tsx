@@ -5,7 +5,7 @@ import AutoSizedImage from "@components/common/AutoSizedImage";
 const SOCIAL_TYPE: Record<string, string> = {
   kakao: "#FEE500",
   google: "#FAFAFA",
-  apple: "#FAFAFA",
+  apple: "#000000",
   huggy: "#000000",
 } as const;
 type SocialType = keyof typeof SOCIAL_TYPE;
@@ -34,7 +34,7 @@ const SocialLoginButton = ({ type, ...props }: Props) => {
       ) : type === "apple" ? (
         <InnerView>
           <AutoSizedImage source={require("@assets/apple.png")} height={20} />
-          <SocialText>Apple로 시작하기</SocialText>
+          <SocialText color={"white"}>Apple로 시작하기</SocialText>
         </InnerView>
       ) : (
         <InnerView>
@@ -58,7 +58,7 @@ const ButtonBox = styled.TouchableOpacity<{ type: SocialType }>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
 `;
 
 const InnerView = styled.View`
