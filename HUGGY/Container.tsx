@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RootStackParamList } from "@interfaces/RootStackParamList";
-import { Home, Login } from "@screens/index";
+import { Home, Login, OnBoarding } from "@screens/index";
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -13,7 +13,12 @@ const RootStack = createStackNavigator<RootStackParamList>();
 const Container = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName="Login">
+      <RootStack.Navigator initialRouteName="OnBoarding">
+        <RootStack.Screen
+          name="OnBoarding"
+          component={OnBoarding}
+          options={{ headerShown: false }}
+        />
         <RootStack.Screen
           name="Login"
           component={Login}
