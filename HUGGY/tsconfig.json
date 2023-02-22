@@ -11,6 +11,7 @@
       "@api/*": ["./src/api/*"],
       "@interfaces/*": ["./src/interfaces/*"],
       "@style/*": ["./src/style/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@assets/*": ["./assets/*"]
     }
   }
