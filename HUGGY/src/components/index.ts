@@ -9,6 +9,7 @@ import {
   Heavy,
 } from "./common/TextComponent";
 import CustomButton from "./buttons/CustomButton";
+import CustomInput from "./common/CustomInput";
 
 export {
   UrlText,
@@ -20,4 +21,5 @@ export {
   TitleBox,
   Heavy,
   CustomButton,
+  CustomInput,
 };
