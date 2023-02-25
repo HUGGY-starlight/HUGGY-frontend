@@ -1,9 +1,9 @@
-import { First, Second } from "./SignupStages/index";
+import { First, Second, Third } from "./SignupStages/index";
 import { useState } from "react";
 import styled from "styled-components/native";
 import Wrapper from "@components/progressbar/Wrapper";
 
-const STAGES = [First, Second] as const;
+const STAGES = [First, Second, Third] as const;
 
 const Signup = () => {
   const [stage, setStage] = useState(0);
