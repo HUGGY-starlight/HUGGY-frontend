@@ -27,7 +27,6 @@ const Inner = ({ stage, max }: Props) => {
   });
 
   useEffect(() => {
-    console.log(stage, max);
     load();
   }, [stage]);
 
