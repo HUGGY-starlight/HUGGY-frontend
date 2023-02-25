@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { screenWidth } from "@style/dimensions";
+import { defaultBtnWidth } from "@style/dimensions";
 import Inner from "./Inner";
 
 export interface Props {
@@ -27,7 +27,7 @@ const ProgressContainer = styled.View`
 `;
 
 const ProgressBox = styled.View`
-  width: ${screenWidth - 50}px;
+  width: ${defaultBtnWidth}px;
   height: 10px;
   border-radius: 10px;
   background-color: #ededed;

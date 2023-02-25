@@ -1,4 +1,3 @@
-import styled from "styled-components/native";
 import {
   Heavy,
   TitleBox,
@@ -6,11 +5,15 @@ import {
   Subtitle,
   CustomButton,
 } from "@components/index";
-import { useBtnTheme } from "@hooks/useBtnTheme";
+import { SignupContainer } from "@components/signup";
 
-const First = () => {
+interface Props {
+  onEnd?: () => void;
+}
+
+const First = ({ onEnd }: Props) => {
   return (
-    <FirstBox>
+    <SignupContainer>
       <TitleBox>
         <Heavy style={{ color: "#F5835E" }}>WELCOME!</Heavy>
         <Title color={"#313131"} margin={"15px 0px 0px 2px"}>
@@ -18,25 +21,19 @@ const First = () => {
         </Title>
         <Subtitle
           color={"#313131"}
-          margin={"5px 0px 0px 2px"}
+          margin={"7px 0px 0px 2px"}
           style={{ textAlign: "left" }}
         >
           {"간단한 정보 입력 후,\nHUGGY를 자유롭게 이용할 수 있어요."}
         </Subtitle>
       </TitleBox>
-      <CustomButton title={"Next"} style={{ backgroundColor: "#F5835E" }} />
-    </FirstBox>
+      <CustomButton
+        title={"Next"}
+        onPress={() => (onEnd ? onEnd() : null)}
+        style={{ backgroundColor: "#F5835E" }}
+      />
+    </SignupContainer>
   );
 };
-
-const FirstBox = styled.View`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 20px;
-`;
 
 export default First;

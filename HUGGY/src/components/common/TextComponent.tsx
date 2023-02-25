@@ -14,7 +14,7 @@ export const TitleBox = styled.View`
 
 export const Title = styled.Text<{ color: string; margin?: string }>`
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   color: ${(props) => props.color};
   margin: ${(props) => (props.margin ? props.margin : "0 0 0 0")};
 `;
@@ -27,8 +27,9 @@ export const TitleBd = styled.Text<{ color: string; margin?: string }>`
 `;
 
 export const Subtitle = styled.Text<{ color: string; margin?: string }>`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
+  line-height: 20px;
   color: ${(props) => props.color};
   white-space: pre-line;
   text-align: center;
