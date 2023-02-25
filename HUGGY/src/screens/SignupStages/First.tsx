@@ -6,10 +6,7 @@ import {
   CustomButton,
 } from "@components/index";
 import { SignupContainer } from "@components/signup";
-
-interface Props {
-  onEnd?: () => void;
-}
+import { Props } from "@interfaces/SignupInterface";
 
 const First = ({ onEnd }: Props) => {
   return (

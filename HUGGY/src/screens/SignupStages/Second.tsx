@@ -2,10 +2,7 @@ import { ClickInfoBox, SignupContainer } from "@components/signup";
 import { TitleBox, Title, Subtitle, CustomButton } from "@components/index";
 import styled from "styled-components/native";
 import { useState } from "react";
-
-interface Props {
-  onEnd?: () => void;
-}
+import { Props } from "@interfaces/SignupInterface";
 
 interface Info {
   title: string;
