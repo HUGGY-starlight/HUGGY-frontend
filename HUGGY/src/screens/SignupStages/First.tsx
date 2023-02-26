@@ -7,8 +7,17 @@ import {
 } from "@components/index";
 import { SignupContainer } from "@components/signup";
 import { Props } from "@interfaces/SignupInterface";
+import { useResetRecoilState } from "recoil";
+import { signupState } from "@recoil/signupState";
 
 const First = ({ onEnd }: Props) => {
+  const setting = useResetRecoilState(signupState);
+
+  const customEnd = () => {
+    setting();
+    onEnd!();
+  };
+
   return (
     <SignupContainer>
       <TitleBox>
@@ -26,7 +35,7 @@ const First = ({ onEnd }: Props) => {
       </TitleBox>
       <CustomButton
         title={"Next"}
-        onPress={() => (onEnd ? onEnd() : null)}
+        onPress={() => (onEnd ? customEnd() : null)}
         style={{ backgroundColor: "#F5835E" }}
       />
     </SignupContainer>

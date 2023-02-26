@@ -3,10 +3,13 @@ import { PolicyButton, SignupContainer } from "@components/signup";
 import { TitleBox, Title, Subtitle, CustomButton } from "@components/index";
 import { Props } from "@interfaces/SignupInterface";
 import styled from "styled-components/native";
+import { signupState, SignupInfo } from "@recoil/signupState";
+import { useRecoilState } from "recoil";
 
 const Third = ({ onEnd }: Props) => {
   const [policies, setPolicies] = useState<Array<number>>([]);
   const [isSucceeded, setIsSucceeded] = useState<boolean>(false);
+  const [info, setInfo] = useRecoilState(signupState);
 
   const onAgree = (isFocused: boolean, id: number) => {
     if (isFocused) setPolicies(policies.filter((policy) => policy !== id));
@@ -18,6 +21,15 @@ const Third = ({ onEnd }: Props) => {
       ? setIsSucceeded(true)
       : setIsSucceeded(false);
   }, [policies]);
+
+  const customEnd = () => {
+    const newInfo: SignupInfo = {
+      ...info,
+      agree: policies,
+    };
+    setInfo(newInfo);
+    onEnd!();
+  };
 
   return (
     <SignupContainer>
@@ -66,7 +78,7 @@ const Third = ({ onEnd }: Props) => {
         </Subtitle>
         <CustomButton
           title={"Next"}
-          onPress={() => (onEnd ? (isSucceeded ? onEnd() : null) : null)}
+          onPress={() => (onEnd ? (isSucceeded ? customEnd() : null) : null)}
           style={{ backgroundColor: `${isSucceeded ? "#F5835E" : "#818181"}` }}
         />
       </PolicyBox>

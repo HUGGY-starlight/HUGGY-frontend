@@ -9,10 +9,22 @@ import {
 import styled from "styled-components/native";
 import { useState } from "react";
 import { Props } from "@interfaces/SignupInterface";
+import { signupState, SignupInfo } from "@recoil/signupState";
+import { useRecoilState } from "recoil";
 
 const Fourth = ({ onEnd }: Props) => {
   const [name, setName] = useState("");
   const [isSucceeded, setIsSucceeded] = useState<boolean>(true); //코드 수정 필요 _ useCheck 추가
+  const [info, setInfo] = useRecoilState(signupState);
+
+  const customEnd = () => {
+    const newInfo: SignupInfo = {
+      ...info,
+      name: name,
+    };
+    setInfo(newInfo);
+    onEnd!();
+  };
 
   return (
     <SignupContainer>
@@ -38,7 +50,7 @@ const Fourth = ({ onEnd }: Props) => {
       <InputBox>
         <CustomButton
           title={"Next"}
-          onPress={() => (onEnd ? (isSucceeded ? onEnd() : null) : null)}
+          onPress={() => (onEnd ? (isSucceeded ? customEnd() : null) : null)}
           style={{ backgroundColor: `${isSucceeded ? "#F5835E" : "#818181"}` }}
         />
       </InputBox>

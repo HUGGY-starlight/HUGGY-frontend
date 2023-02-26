@@ -3,6 +3,8 @@ import { TitleBox, Title, Subtitle, CustomButton } from "@components/index";
 import styled from "styled-components/native";
 import { useState } from "react";
 import { Props } from "@interfaces/SignupInterface";
+import { signupState, SignupInfo } from "@recoil/signupState";
+import { useRecoilState } from "recoil";
 
 interface Info {
   title: string;
@@ -11,6 +13,7 @@ interface Info {
 
 const Second = ({ onEnd }: Props) => {
   const [focused, setFocused] = useState(0);
+  const [info, setInfo] = useRecoilState(signupState);
 
   const STORE: Info = {
     title: "점포를 허깅 스토어로 등록하고 싶어요.",
@@ -28,6 +31,15 @@ const Second = ({ onEnd }: Props) => {
       "허깅 스토어에 일정 금액을 후원하면, 이후 복지 대상자가 방문하여 내가 지불한 금액 만큼의 메뉴를 받아갈 수 있어요.",
       "혹은 후원 금액이 남아있는 스토어를 찾아보고, 사장님께 복지카드를 보여드리면 후원 메뉴를 수여받을 수 있어요.",
     ],
+  };
+
+  const customEnd = () => {
+    const newInfo: SignupInfo = {
+      ...info,
+      type: focused === 0 ? "user" : "store",
+    };
+    setInfo(newInfo);
+    onEnd!();
   };
 
   return (
@@ -62,7 +74,7 @@ const Second = ({ onEnd }: Props) => {
         } 회원 가입을 진행합니다!`}</Subtitle>
         <CustomButton
           title={"Next"}
-          onPress={() => (onEnd ? onEnd() : null)}
+          onPress={() => (onEnd ? customEnd() : null)}
           style={{ backgroundColor: "#F5835E" }}
         />
       </ExplainBox>

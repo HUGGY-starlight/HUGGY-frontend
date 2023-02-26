@@ -3,6 +3,7 @@ import * as Font from "expo-font";
 import { View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import Container from "./Container";
+import { RecoilRoot } from "recoil";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,7 +45,9 @@ export default function App() {
 
   return (
     <View onLayout={onLayoutRootView} style={{ flex: 1, width: "100%" }}>
-      <Container />
+      <RecoilRoot>
+        <Container />
+      </RecoilRoot>
     </View>
   );
 }

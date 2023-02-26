@@ -9,8 +9,12 @@ import {
 import { SignupContainer } from "@components/signup";
 import { Props } from "@interfaces/SignupInterface";
 import { defaultBtnWidth } from "@style/dimensions";
+import { signupState } from "@recoil/signupState";
+import { useRecoilState } from "recoil";
 
 const Fifth = ({ onEnd }: Props) => {
+  const [info, setInfo] = useRecoilState(signupState);
+
   return (
     <SignupContainer>
       <TitleBox>
