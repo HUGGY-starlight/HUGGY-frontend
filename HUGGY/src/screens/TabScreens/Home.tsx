@@ -1,4 +1,4 @@
-import { HomeCarousel } from "@components/index";
+import { HomeCarousel, ProfileCard } from "@components/index";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { screenWidth } from "@style/dimensions";
 
@@ -20,6 +20,7 @@ const PAGES = [
 const Home = () => {
   return (
     <SafeAreaView>
+      <ProfileCard />
       <HomeCarousel
         gap={16}
         offset={8}
