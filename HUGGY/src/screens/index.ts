@@ -1,6 +1,6 @@
-import Home from "./Home";
+import Navigator from "./Navigator";
 import Login from "./Login";
 import OnBoarding from "./OnBoarding";
 import Signup from "./Signup";
 
-export { Home, Login, OnBoarding, Signup };
+export { Navigator, Login, OnBoarding, Signup };

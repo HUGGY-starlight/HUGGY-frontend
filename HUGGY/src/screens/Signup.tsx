@@ -2,17 +2,28 @@ import { First, Second, Third, Fourth, Fifth } from "./SignupStages/index";
 import { useState } from "react";
 import styled from "styled-components/native";
 import Wrapper from "@components/progressbar/Wrapper";
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "@interfaces/RootStackParamList";
+
+export type Props = StackScreenProps<RootStackParamList, "Signup">;
 
 const STAGES = [First, Second, Third, Fourth, Fifth] as const;
 
-const Signup = () => {
+const Signup = ({ navigation }: Props) => {
   const [stage, setStage] = useState(0);
   const CurrentPage = STAGES[stage];
+
+  const onEnd = () => {
+    stage < STAGES.length - 1
+      ? setStage((prev) => prev + 1)
+      : navigation.reset({ routes: [{ name: "Navigator" }] });
+  };
+
   return (
     <SignupContainer>
       <Wrapper stage={stage + 1} max={STAGES.length} />
       <ContentContainer>
-        <CurrentPage onEnd={() => setStage((prev) => prev + 1)} />
+        <CurrentPage onEnd={() => onEnd()} />
       </ContentContainer>
     </SignupContainer>
   );
