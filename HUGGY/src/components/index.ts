@@ -10,6 +10,7 @@ import {
 } from "./common/TextComponent";
 import CustomButton from "./buttons/CustomButton";
 import CustomInput from "./common/CustomInput";
+import HomeCarousel from "./Home/HomeCarousel";
 
 export {
   UrlText,
@@ -22,4 +23,5 @@ export {
   Heavy,
   CustomButton,
   CustomInput,
+  HomeCarousel,
 };
