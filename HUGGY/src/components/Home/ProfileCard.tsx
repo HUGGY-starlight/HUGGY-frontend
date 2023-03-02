@@ -17,26 +17,34 @@ const tmpInfo: Info = {
 const ProfileCard = () => {
   const [info, setInfo] = useState<Info>(tmpInfo);
   return (
-    <ProfileBox>
-      <ProfileImg source={{ uri: info.img }} />
-      <TitleBox>
-        <Title style={{ fontWeight: "700" }}>
-          반가워요, <Title style={{ fontWeight: "900" }}>{info.name}님!</Title>
-        </Title>
-        <Subtitle>{info.position} 탐색 중</Subtitle>
-      </TitleBox>
-      <Entypo name="menu" size={30} color="black" />
-    </ProfileBox>
+    <ProfileContainer>
+      <ProfileBox>
+        <ProfileImg source={{ uri: info.img }} />
+        <TitleBox>
+          <Title style={{ fontWeight: "700" }}>
+            반가워요,{" "}
+            <Title style={{ fontWeight: "900" }}>{info.name}님!</Title>
+          </Title>
+          <Subtitle>{info.position} 탐색 중</Subtitle>
+        </TitleBox>
+        <Entypo name="menu" size={30} color="black" />
+      </ProfileBox>
+    </ProfileContainer>
   );
 };
 
-const ProfileBox = styled.View`
+const ProfileContainer = styled.View`
   width: 100%;
   padding: 20px;
+`;
+
+const ProfileBox = styled.View`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 `;
 
 const ProfileImg = styled.Image`
@@ -46,9 +54,11 @@ const ProfileImg = styled.Image`
 `;
 
 const TitleBox = styled.View`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 `;
 
 const Title = styled.Text`
