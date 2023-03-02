@@ -54,7 +54,7 @@ const Login = ({ navigation }: Props) => {
           />
           <SocialLoginButton
             type="apple"
-            onPress={() => navigation.navigate("Signup")}
+            onPress={() => navigation.navigate("Navigator")}
           />
         </ButtonBox>
         <UrlText

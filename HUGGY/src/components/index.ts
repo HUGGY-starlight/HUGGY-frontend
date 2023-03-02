@@ -12,6 +12,7 @@ import CustomButton from "./buttons/CustomButton";
 import CustomInput from "./common/CustomInput";
 import HomeCarousel from "./Home/HomeCarousel";
 import ProfileCard from "./Home/ProfileCard";
+import HomeSearchBox from "./Home/HomeSearchBox";
 
 export {
   UrlText,
@@ -26,4 +27,5 @@ export {
   CustomInput,
   HomeCarousel,
   ProfileCard,
+  HomeSearchBox,
 };
