@@ -4,12 +4,11 @@ import { TextInputProps } from "react-native";
 
 interface Props extends TextInputProps {
   onPress: () => void;
-  marginTop: number;
 }
 
-const HomeSearchBox = ({ onPress, marginTop, ...props }: Props) => {
+const HomeSearchBox = ({ onPress, ...props }: Props) => {
   return (
-    <SearchBox style={{ marginTop: marginTop }}>
+    <SearchBox>
       <InnerInput {...props} />
       <SearchButton onPress={() => onPress()}>
         <Entypo name="magnifying-glass" size={28} color="#AFAFAF" />

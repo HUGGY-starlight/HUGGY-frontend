@@ -13,6 +13,7 @@ import CustomInput from "./common/CustomInput";
 import HomeCarousel from "./Home/HomeCarousel";
 import ProfileCard from "./Home/ProfileCard";
 import HomeSearchBox from "./Home/HomeSearchBox";
+import CategoryItem from "./Home/CategoryItem";
 
 export {
   UrlText,
@@ -28,4 +29,5 @@ export {
   HomeCarousel,
   ProfileCard,
   HomeSearchBox,
+  CategoryItem,
 };
