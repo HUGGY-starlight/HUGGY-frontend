@@ -14,9 +14,7 @@ const DeliverHugging = ({ navigation }: Props) => {
   const CurrentPage = STAGES[stage];
 
   const onEnd = () => {
-    stage < STAGES.length - 1
-      ? setStage((prev) => prev + 1)
-      : navigation.reset({ routes: [{ name: "Navigator" }] });
+    stage < STAGES.length - 1 ? setStage((prev) => prev + 1) : navigation.pop();
   };
 
   return (
