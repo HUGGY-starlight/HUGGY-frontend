@@ -3,6 +3,7 @@ import {
   HomeCarousel,
   HomeSearchBox,
   ProfileCard,
+  ContentsWrapper,
 } from "@components/index";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { screenWidth } from "@style/dimensions";
@@ -38,42 +39,57 @@ const Home = () => {
   const [curCategory, setCurCategory] = useState(Categories.All);
 
   return (
-    <SafeAreaView>
-      <ProfileCard />
-      <HomeCarousel
-        gap={16}
-        offset={8}
-        pages={PAGES}
-        pageWidth={screenWidth - (16 + 8) * 2}
-      />
-      <SearchBoxContainer>
-        <SearchBoxWrapper>
-          <HomeSearchBox
-            onPress={() => null}
-            placeholder="찾고싶은 가게 이름을 검색해보세요."
-          />
-        </SearchBoxWrapper>
-        <CategoryWrapper
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-        >
-          {Object.values(Categories).map((category) => (
-            <CategoryItem
-              title={category}
-              isFocused={category === curCategory}
-              key={category}
-              onPress={() => setCurCategory(category)}
-              style={{
-                marginLeft: category === Categories.All ? 25 : 6,
-                marginRight: category === Categories.Drink ? 25 : 0,
-              }}
+    <SafeAreaView style={{ backgroundColor: "#f4f4f4" }}>
+      <HomeScrollContainer>
+        <ProfileCard />
+        <HomeCarousel
+          gap={16}
+          offset={8}
+          pages={PAGES}
+          pageWidth={screenWidth - (16 + 8) * 2}
+        />
+        <SearchBoxContainer>
+          <SearchBoxWrapper>
+            <HomeSearchBox
+              onPress={() => null}
+              placeholder="찾고싶은 가게 이름을 검색해보세요."
+              returnKeyType="done"
             />
-          ))}
-        </CategoryWrapper>
-      </SearchBoxContainer>
+          </SearchBoxWrapper>
+          <CategoryWrapper
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          >
+            {Object.values(Categories).map((category) => (
+              <CategoryItem
+                title={category}
+                isFocused={category === curCategory}
+                key={category}
+                onPress={() => setCurCategory(category)}
+                style={{
+                  marginLeft: category === Categories.All ? 25 : 6,
+                  marginRight: category === Categories.Drink ? 25 : 0,
+                }}
+              />
+            ))}
+          </CategoryWrapper>
+        </SearchBoxContainer>
+        <ContentsWrapper
+          title={
+            curCategory === Categories.All
+              ? "따뜻한 마음 모아모아"
+              : curCategory
+          }
+          subtitle={"배고픈 아이들을 따뜻하게 안아주세요."}
+        />
+      </HomeScrollContainer>
     </SafeAreaView>
   );
 };
+
+const HomeScrollContainer = styled.ScrollView`
+  width: 100%;
+`;
 
 const SearchBoxContainer = styled.View`
   width: 100%;

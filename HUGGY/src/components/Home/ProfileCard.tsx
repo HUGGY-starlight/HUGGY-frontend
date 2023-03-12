@@ -25,7 +25,7 @@ const ProfileCard = () => {
             반가워요,{" "}
             <Title style={{ fontWeight: "900" }}>{info.name}님!</Title>
           </Title>
-          <Subtitle>{info.position} 탐색 중</Subtitle>
+          <Subtitle>허기에서 따뜻함을 나누어봐요!</Subtitle>
         </TitleBox>
         <Entypo name="menu" size={30} color="black" />
       </ProfileBox>
