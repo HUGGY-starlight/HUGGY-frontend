@@ -1,7 +1,7 @@
 import Home from "./Home";
-import Like from "./Like";
+import History from "./History";
 import Notice from "./Notice";
 import Profile from "./Profile";
 import QRBox from "./QRBox";
 
-export { Home, Like, Notice, Profile, QRBox };
+export { Home, History, Notice, Profile, QRBox };

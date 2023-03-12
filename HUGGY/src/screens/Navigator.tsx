@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Like, Notice, Profile, QRBox } from "./TabScreens/index";
+import { Home, History, Notice, Profile, QRBox } from "./TabScreens/index";
 import {
   Ionicons,
   Feather,
@@ -42,7 +42,7 @@ const Navigator = (props: Props) => {
       />
       <Tab.Screen
         name="Like"
-        component={Like}
+        component={History}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (
