@@ -99,7 +99,7 @@ const Navigator = (props: Props) => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        children={() => <Profile {...props} />}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => (

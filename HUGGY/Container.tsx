@@ -9,6 +9,7 @@ import {
   Signup,
   DeliverHugging,
 } from "@screens/index";
+import { MyProfile, Store, Report } from "@screens/Profile";
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -43,6 +44,21 @@ const Container = () => {
         <RootStack.Screen
           name="DeliverHugging"
           component={DeliverHugging}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="MyProfile"
+          component={MyProfile}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="Store"
+          component={Store}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="Report"
+          component={Report}
           options={{ headerShown: false }}
         />
       </RootStack.Navigator>
