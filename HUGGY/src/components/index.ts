@@ -16,6 +16,7 @@ import HomeSearchBox from "./Home/HomeSearchBox";
 import CategoryItem from "./Home/CategoryItem";
 import ContentsWrapper from "./Home/ContentsWrapper";
 import SemiButton from "./common/SemiButton";
+import LoadingSpinner from "./common/LoadingSpinner";
 
 export {
   UrlText,
@@ -34,4 +35,5 @@ export {
   CategoryItem,
   ContentsWrapper,
   SemiButton,
+  LoadingSpinner,
 };

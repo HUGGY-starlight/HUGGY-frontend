@@ -1,7 +1,8 @@
 import { ViewProps } from "react-native";
 import styled from "styled-components/native";
 import { Header, Subtitle, TitleBox, Content } from "./textComponent";
-import { CustomButton } from "..";
+import { CustomButton, LoadingSpinner } from "..";
+import { useState } from "react";
 
 interface Props extends ViewProps {
   onEnd: () => void;
@@ -14,6 +15,16 @@ const dummyInfo = {
 };
 
 const ConfirmInfo = ({ onEnd, onClose }: Props) => {
+  const [loading, setLoading] = useState(false);
+
+  const onRequest = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      onEnd();
+    }, 3000);
+  };
+
   return (
     <Container>
       <TitleBox>
@@ -42,7 +53,7 @@ const ConfirmInfo = ({ onEnd, onClose }: Props) => {
         <CustomButton
           title="Next"
           style={{ backgroundColor: "#F5835E" }}
-          onPress={() => onEnd()}
+          onPress={() => onRequest()}
         />
         <CustomButton
           title="Back"
@@ -50,6 +61,7 @@ const ConfirmInfo = ({ onEnd, onClose }: Props) => {
           onPress={() => onClose()}
         />
       </ContentsWrapper>
+      {loading ? <LoadingSpinner /> : <></>}
     </Container>
   );
 };
