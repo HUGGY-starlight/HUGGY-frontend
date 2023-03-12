@@ -15,6 +15,7 @@ import ProfileCard from "./Home/ProfileCard";
 import HomeSearchBox from "./Home/HomeSearchBox";
 import CategoryItem from "./Home/CategoryItem";
 import ContentsWrapper from "./Home/ContentsWrapper";
+import SemiButton from "./common/SemiButton";
 
 export {
   UrlText,
@@ -32,4 +33,5 @@ export {
   HomeSearchBox,
   CategoryItem,
   ContentsWrapper,
+  SemiButton,
 };
