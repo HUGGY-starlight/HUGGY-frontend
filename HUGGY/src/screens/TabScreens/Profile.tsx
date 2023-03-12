@@ -12,9 +12,20 @@ const Profile = ({ navigation }: Props) => {
       <Container>
         <Title style={{ color: "#414141" }}>프로필 관리</Title>
         <BtnBox>
-          <SemiButton title="내 프로필" />
-          <SemiButton title="허깅 스토어 관리" style={{ marginTop: 10 }} />
-          <SemiButton title="허깅 전달 관련 신고" style={{ marginTop: 10 }} />
+          <SemiButton
+            title="내 프로필"
+            onPress={() => navigation.push("MyProfile")}
+          />
+          <SemiButton
+            title="허깅 스토어 관리"
+            style={{ marginTop: 10 }}
+            onPress={() => navigation.push("Store")}
+          />
+          <SemiButton
+            title="허깅 전달 관련 신고"
+            style={{ marginTop: 10 }}
+            onPress={() => navigation.push("Report")}
+          />
           <SemiButton title="로그아웃" style={{ marginTop: 10 }} />
           <SemiButton title="회원 탈퇴" style={{ marginTop: 10 }} />
         </BtnBox>
