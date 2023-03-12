@@ -3,4 +3,5 @@ export type RootStackParamList = {
   Login: undefined;
   OnBoarding: undefined;
   Signup: undefined;
+  DeliverHugging: undefined;
 };

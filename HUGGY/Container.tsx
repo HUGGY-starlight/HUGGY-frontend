@@ -2,7 +2,13 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { RootStackParamList } from "@interfaces/RootStackParamList";
-import { Navigator, Login, OnBoarding, Signup } from "@screens/index";
+import {
+  Navigator,
+  Login,
+  OnBoarding,
+  Signup,
+  DeliverHugging,
+} from "@screens/index";
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -32,6 +38,11 @@ const Container = () => {
         <RootStack.Screen
           name="Navigator"
           component={Navigator}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name="DeliverHugging"
+          component={DeliverHugging}
           options={{ headerShown: false }}
         />
       </RootStack.Navigator>
